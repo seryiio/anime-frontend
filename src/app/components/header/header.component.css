@@ -1,0 +1,48 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ACE5FF;
+    padding: 0.5em 2em 0.5em 2em;
+    height: 5vh;
+}
+
+.left{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5em;
+}
+
+.sidebar{
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+.right{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5em;
+}
+
+.logo{
+    width: 100%;
+}
+
+.logo img{
+    max-width: 20%;
+}
+
+svg {
+    fill: #4D80E4;
+}

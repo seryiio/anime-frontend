@@ -1,0 +1,168 @@
+h4 {
+    color: gray;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: auto;
+}
+
+.container__anime-broadcast {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    height: 60vh;
+    background: rgb(29, 29, 29);
+    background: radial-gradient(circle, rgba(29, 29, 29, 1) 0%, rgb(87, 228, 77) 100%);
+}
+
+.container__anime-broadcast img {
+    box-shadow: 2px 4px 72px 5px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 2px 4px 72px 5px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 2px 4px 72px 5px rgba(0, 0, 0, 0.75);
+    width: 45%;
+    height: auto;
+}
+
+.container__my-list {
+    padding: 1em 10em 1em 10em;
+}
+
+.carousel {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em;
+}
+
+.arrow-left, .arrow-right {
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em;
+}
+
+.status-icon {
+    fill: red;
+}
+
+.favorite-icon {
+    fill: red;
+}
+
+.card {
+    display: flex;
+    width: 10em;
+    height: 25em;
+    flex-direction: column;
+    position: relative;
+    object-fit: cover;
+}
+
+.card_image {
+    width: 10em;
+    height: 15em;
+    background-color: aquamarine;
+}
+
+.card img {
+    width: 10em;
+    height: 15em;
+}
+
+.card__icons {
+    position: absolute;
+    top: -1em;
+    right: -1em;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    z-index: 999;
+}
+
+.card__description {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card__about {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.comments {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.container__genres {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    background-color: #000000;
+    padding: 1em;
+    gap: 2em;
+}
+
+.genre {
+    background-color: aliceblue;
+    border-radius: 15px 15px 15px 15px;
+    -webkit-border-radius: 15px 15px 15px 15px;
+    -moz-border-radius: 15px 15px 15px 15px;
+    width: 15%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.genre img {
+    display: flex;
+    position: absolute;
+    top: -40px;
+    left: 0;
+    width: 100%;
+    height: auto;
+    z-index: 1;
+}
+
+.random-color-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(0, 0, 0);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(77, 128, 228, 0.70) 90%);
+    z-index: 2;
+}
+
+
+.genre h3 {
+    color: white;
+    z-index: 999;
+}
+
+.container__recomendation {
+    margin: 0 10em 0 10em;
+}
+
+.container__new-episodes {
+    margin: 0 10em 0 10em;
+}
+
+.container__future-animes {
+    margin: 0 10em 0 10em;
+}

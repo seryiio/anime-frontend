@@ -1,0 +1,13 @@
+.footer {
+    display: flex;
+    padding: 1em 10em 1em 10em;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #E9FDFD;
+    width: auto;
+}
+
+.watermark {
+    color: #494949a7;
+}
