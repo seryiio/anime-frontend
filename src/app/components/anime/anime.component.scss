@@ -1,0 +1,235 @@
+h1 {
+    color: white;
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+    color: white;
+}
+
+h4 {
+    font-size: 1.25rem;
+    color: white;
+}
+
+p {
+    font-size: 1rem;
+    color: white;
+}
+
+svg {
+    fill: white;
+}
+
+svg:hover {
+    fill: #46b3e7;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+
+    .container__first-container {
+        display: flex;
+        width: 100%;
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 16em;
+
+        .container__first-container--backgroundImage {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.692);
+            z-index: 1;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                filter: brightness(40%);
+            }
+
+        }
+
+
+    }
+
+    .container__second-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 2.5em;
+        padding: 2em;
+        width: 100%;
+        height: 26em;
+        z-index: 997;
+
+        .container__second-container--cartelAnime {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            gap: 0.5em;
+            .second-container--carterAnime__image {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 55%;
+                height: 100%;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    filter: brightness(100%);
+                }
+            }
+
+            .second-container--carterAnime__name {
+                display: flex;
+                width: 100%;
+                justify-content: center;
+                align-items: center;
+                gap: 1em;
+            }
+        }
+
+        .container__second-container--descriptionAnime {
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            height: 100%;
+            padding-bottom: 5em;
+            gap: 2.5em;
+            .second-container__descriptionAnime--episodes {
+                text-align: center;
+            }
+        }
+
+
+        .container__second-container--trailer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            z-index: 997;
+            .container--trailer__video {
+                display: flex;
+                width: 100%;
+                height: 60%;
+
+                iframe {
+                    width: 100%;
+                    height: 100%;
+                }
+
+            }
+        }
+    }
+
+    .container__third-container {
+        display: flex;
+        flex-direction: column;
+        width: auto;
+        z-index: 997;
+        color: white;
+        margin: 10em 2.5em 0 2.5em;
+        gap: 2.5em;
+
+        .container__thrid-container--nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 2.5em;
+
+            ul {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 100%;
+                margin: 0 2em 0 2em;
+
+                li {
+                    text-align: center;
+                    width: 100%;
+                    height: 100%;
+                    background-color: #2e279d;
+                }
+
+                li:hover {
+                    background-color: #46b1e6;
+                }
+            }
+        }
+
+        .container__third-container--description {
+            display: flex;
+            justify-content: center;
+        }
+
+        .container__thrid-container--episodes {
+            display: flex;
+
+            .cards {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 2.5em;
+            }
+        }
+    }
+}
+
+@media (min-width: 640px) {
+    .container {
+        max-width: 640px;
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 768px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .container {
+        max-width: 1024px;
+    }
+}
+
+@media (min-width: 1280px) {
+    .container {
+        max-width: 1280px;
+    }
+}
+
+@media (min-width: 1536px) {
+    .container {
+        max-width: 1536px;
+    }
+}
+
+
+@media (max-width: 767px) {
+    .container {
+        .container__recomendation {
+            margin: 1.5em;
+        }
+    }
+}

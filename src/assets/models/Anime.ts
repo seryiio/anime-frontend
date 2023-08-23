@@ -1,11 +1,11 @@
 export class Anime {
-    constructor(
-        public id: number,
-        public title: string,
-        public season: number,
-        public description: string,
-        public episodes: number,
-        public image: string,
-        public year: number
-    ) { }
+    id?: number;
+    title?: string;
+    type?: string;
+    description?: string;
+    year?: number;
+    image?: string;
+    coverImage?: string;
+    url?: string;
+    urlTrailer?:string;
 }

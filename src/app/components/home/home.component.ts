@@ -1,50 +1,72 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AnimeService } from 'src/app/services/AnimeService/anime.service';
+import { GenreService } from 'src/app/services/GenreService/genre.service';
+import { SeasonService } from 'src/app/services/SeasonService/season.service';
 import { Anime } from 'src/assets/models/Anime';
-
+import { Genre } from 'src/assets/models/Genre';
+import { Season } from 'src/assets/models/Season';
+import Swiper from 'swiper'
+import { SwiperOptions } from 'swiper/types';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-
   animes: Anime[] = [];
-  constructor(private service: AnimeService, private router: Router) { }
+  seasons: Season[] = [];
+  genres: Genre[] = [];
+  activeSeasons: Season[] = [];
+  constructor(
+    private animeService: AnimeService, private animeRouter: Router,
+    private genreService: GenreService, private genreRouter: Router,
+    private seasonService: SeasonService, private seasonRouter: Router
+  ) { }
 
   ngOnInit() {
+
+    this.GetSeasonActive();
     this.GetAnimes();
+    this.GetSeasons();
+    this.GetGenrer();
 
-    document.addEventListener("DOMContentLoaded", function () {
-      const carousel = document.querySelector('.cards') as HTMLElement;
-      const prevBtn = document.querySelector('.arrow-left') as HTMLButtonElement;
-      const nextBtn = document.querySelector('.arrow-right') as HTMLButtonElement;
-      const slideWidth = (document.querySelector('.card') as HTMLElement).clientWidth;
+  }
 
-      let currentIndex = 0;
-
-      prevBtn.addEventListener('click', () => {
-        currentIndex = (currentIndex - 1 + carousel.children.length) % carousel.children.length;
-        updateCarousel();
-      });
-
-      nextBtn.addEventListener('click', () => {
-        currentIndex = (currentIndex + 1) % carousel.children.length;
-        updateCarousel();
-      });
-
-      function updateCarousel() {
-        const translateValue = -currentIndex * slideWidth;
-        carousel.style.transform = `translateX(${translateValue}px)`;
-      }
-    });
+  private GetGenrer() {
+    this.genreService.getGenres().subscribe(data => {
+      this.genres = data;
+    })
   }
 
   private GetAnimes() {
-    this.service.getAnimes().subscribe(data => {
+    this.animeService.getAnimes().subscribe(data => {
       this.animes = data;
     })
+  }
+
+  private GetSeasons() {
+    this.seasonService.getSeasons().subscribe(data => {
+      console.log(data);
+      this.seasons = data;
+    })
+  }
+
+  private GetSeasonActive() {
+    this.seasonService.getActiveSeasons().subscribe(
+      activeSeasons => {
+        console.log(activeSeasons);
+        this.activeSeasons = activeSeasons;
+      }
+    );
+  }
+
+  getStatusIconClass(status: boolean): string {
+    return status ? 'status-icon-green' : 'status-icon-red';
+  }
+
+  viewAnimebyId(id :number){
+    this.animeRouter.navigate(['/anime',id]);
   }
 }

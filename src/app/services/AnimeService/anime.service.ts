@@ -15,4 +15,8 @@ export class AnimeService {
   getAnimes():Observable<Anime[]> {
     return this.http.get<Anime[]>(`${this.baseURL}`);
   }
+
+  getAnimeById(id:number):Observable<Anime[]> {
+    return this.http.get<Anime[]>(`${this.baseURL}/${id}`);
+  }
 }

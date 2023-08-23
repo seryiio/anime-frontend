@@ -1,0 +1,303 @@
+h1 {
+    color: white;
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+    color: white;
+}
+
+h4 {
+    font-size: 1.25rem;
+    color: white;
+}
+
+p {
+    font-size: 1rem;
+    color: white;
+}
+
+.container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+@media (min-width: 640px) {
+    .container {
+        max-width: 640px;
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 768px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .container {
+        max-width: 1024px;
+    }
+}
+
+@media (min-width: 1280px) {
+    .container {
+        max-width: 1280px;
+    }
+}
+
+@media (min-width: 1536px) {
+    .container {
+        max-width: 1536px;
+    }
+}
+
+
+@media (max-width: 767px) {
+    .container {
+        .container__recomendation {
+            margin: 1.5em;
+        }
+    }
+}
+
+.container__anime-broadcast {
+    .container__anime-broadcast--anime-backgroundImage {
+        padding: 3em 1em 3em 1em;
+        background: rgb(63, 94, 251);
+        background: radial-gradient(circle, rgba(63, 94, 251, 1) 0%, rgba(70, 179, 230, 1) 100%);
+
+        .anime-broadcast__swiper-container {
+            display: flex;
+
+            .anime-broadcast__swiper-container--slide {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                .image {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 100%;
+                    max-width: 600px;
+                    height: 20em;
+                    background-color: rgb(255, 255, 255);
+                    margin: 0 auto;
+                    overflow: hidden;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: fill;
+                        box-shadow: 1px 3px 23px 0px rgba(0, 0, 0, 0.75);
+                        -webkit-box-shadow: 1px 3px 23px 0px rgba(0, 0, 0, 0.75);
+                        -moz-box-shadow: 1px 3px 23px 0px rgba(0, 0, 0, 0.75);
+                    }
+                }
+            }
+        }
+    }
+
+
+
+    .container__anime-broadcast--names {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        height: 20%;
+        margin: 1em 1em 1em 1em;
+        gap: 1rem;
+
+        .container__anime-broadcast--names-name {
+            --tw-bg-opacity: 1;
+            background-color: rgb(30 41 59 / var(--tw-bg-opacity));
+            --tw-text-opacity: 1;
+            color: rgb(249 250 251 / var(--tw-text-opacity));
+            padding: 1.25rem;
+        }
+    }
+
+
+}
+
+.container__myList--title {
+    border-color: #46b3e6;
+}
+
+.card {
+    max-width: 10em;
+}
+
+.container__genres {
+    padding: 1em;
+    background-color: #46b2e7;
+
+    .container__genres--carousel {
+        .genres--genre {
+            background-color: rgb(0, 0, 0);
+            display: flex;
+            justify-content: center;
+            height: 2.5em;
+            align-items: center;
+            border-radius: 2.5em;
+            cursor: pointer;
+        }
+
+        .genres--genre:hover {
+            background-color: #2a6a87;
+        }
+
+    }
+
+}
+
+.container__recomendation {
+    margin: 2.5em 6em 2.5em 6em;
+}
+
+.container__recomendation--title {
+    border-bottom-width: 4px;
+    margin-bottom: 2rem;
+    border-radius: 0.25rem;
+    border-color: #46b3e6;
+}
+
+.cards {
+
+    .cards__card {
+        cursor: pointer;
+        height: 20em;
+        padding: 1em;
+
+        .cards__card--first-container {
+            transition: all 0.4s;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-radius: 15px;
+            width: 100%;
+            height: 100%;
+
+            .card__icons-status {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                position: absolute;
+                gap: 0.5em;
+                top: -1em;
+                right: -1em;
+                z-index: 996;
+                fill: azure;
+
+                svg {
+                    height: 1.75em;
+                }
+            }
+
+            .card__image {
+                width: 100%;
+                height: 100%;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+
+            .card__names {
+                display: flex;
+                width: 100%;
+                height: 5em;
+                justify-content: flex-start;
+                align-items: flex-start;
+
+                .card__names-name {
+                    line-height: 1.75rem;
+                    font-weight: bold;
+                }
+
+            }
+
+        }
+
+        .cards__card--second-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.4s;
+            padding: 1em 0.25em 1em 0.25em;
+            border-radius: 15px;
+            width: 100%;
+            height: 100%;
+
+            .second-container__description {
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-start;
+                width: 100%;
+                gap: 0.25em;
+                flex: 1;
+
+                p {
+                    font-size: 1rem;
+                }
+
+                svg {
+                    fill: white;
+                }
+
+                span {
+                    font-size: 0.75rem;
+                }
+
+            }
+
+            .second-container__notice {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                gap: 2em;
+
+                svg {
+                    fill: white;
+                }
+            }
+
+        }
+    }
+}
+
+.cards__card:hover .cards__card--first-container {}
+
+.status-icon-red {
+    fill: rgb(255, 0, 0);
+}
+
+.status-icon-green {
+    fill: rgb(0, 255, 0);
+}
+
+
+.container__new-episodes {
+    margin: 2.5em 6em 2.5em 6em;
+}
+
+.container__future-animes {
+    margin: 2.5em 6em 2.5em 6em;
+}
