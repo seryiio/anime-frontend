@@ -19,6 +19,7 @@ export class HomeComponent implements OnInit {
   seasons: Season[] = [];
   genres: Genre[] = [];
   activeSeasons: Season[] = [];
+  seasonStatusMap: Record<number, boolean[]> = {};
   constructor(
     private animeService: AnimeService, private animeRouter: Router,
     private genreService: GenreService, private genreRouter: Router,
@@ -43,6 +44,7 @@ export class HomeComponent implements OnInit {
   private GetAnimes() {
     this.animeService.getAnimes().subscribe(data => {
       this.animes = data;
+      console.log(this.animes);
     })
   }
 
@@ -58,6 +60,17 @@ export class HomeComponent implements OnInit {
       activeSeasons => {
         console.log(activeSeasons);
         this.activeSeasons = activeSeasons;
+      }
+    );
+  }
+
+  private GetSeasonsActive(){
+    this.animeService.getSeasonStatusForAllAnime().subscribe(
+      (data) => {
+        this.seasonStatusMap = data;
+      },
+      (error) => {
+        console.error(error);
       }
     );
   }

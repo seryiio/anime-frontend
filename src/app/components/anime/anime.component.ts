@@ -21,6 +21,16 @@ export class AnimeComponent implements OnInit {
     image: '',
     coverImage: '',
     urlTrailer:'',
+    seasons: [
+      {
+        id: 0,
+        number: 0,
+        startDate: 0,
+        endDate: 0,
+        description: '',
+        status: false
+      }
+    ]
   };
 
   message= "No se encontro este anime";

@@ -21,9 +21,9 @@
             </div>
         </div>
         <div class="container__second-container--descriptionAnime">
-            <div class="second-container__descriptionAnime--episodes">
+            <div *ngFor="let season of animeById.seasons" class="second-container__descriptionAnime--episodes">
                 <h4>Temporadas</h4>
-                <p>2</p>
+                <p>{{season.number}}</p>
             </div>
             <div class="second-container__descriptionAnime--episodes">
                 <h4>Ranking</h4>
@@ -61,7 +61,7 @@
         <div class="container__thrid-container--description">
             <p>{{animeById.description}}</p>
         </div>
-        <div class="container__thrid-container--episodes">
+        <div class="container__thrid-container--seasons">
             <div class="cards">
                 <div class="card">
                     <h3>container__recomendation</h3>

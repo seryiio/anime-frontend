@@ -3,11 +3,11 @@
         <div class="container__anime-broadcast--anime-backgroundImage">
             <swiper-container class="anime-broadcast__swiper-container" effect="coverflow" slide-shadows="true"
                 centered-slides="true">
-                <swiper-slide class="anime-broadcast__swiper-container--slide" *ngFor="let season of activeSeasons">
+                <swiper-slide class="anime-broadcast__swiper-container--slide" *ngFor="let anime of animes">
 
                     <div class="image">
-                        <a [routerLink]="['/animes', season.anime.id]">
-                            <img [src]="season.anime.coverImage" alt="">
+                        <a [routerLink]="['/animes', anime.id]">
+                            <img [src]="anime.coverImage" alt="">
                         </a>
                     </div>
 
@@ -15,8 +15,8 @@
             </swiper-container>
         </div>
         <div class="container__anime-broadcast--names">
-            <div *ngFor="let season of activeSeasons" class="container__anime-broadcast--names-name">
-                <p>{{season.anime.title}}</p>
+            <div *ngFor="let anime of animes" class="container__anime-broadcast--names-name">
+                <p>{{anime.title}}</p>
             </div>
         </div>
     </div>

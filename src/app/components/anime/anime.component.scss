@@ -68,7 +68,7 @@ svg:hover {
 
     .container__second-container {
         position: absolute;
-        top: 0;
+        top: 0.25em;
         left: 0;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
@@ -77,7 +77,7 @@ svg:hover {
         width: 100%;
         height: 26em;
         z-index: 997;
-
+        
         .container__second-container--cartelAnime {
             display: flex;
             flex-direction: column;
@@ -183,7 +183,7 @@ svg:hover {
             justify-content: center;
         }
 
-        .container__thrid-container--episodes {
+        .container__thrid-container--seasons {
             display: flex;
 
             .cards {

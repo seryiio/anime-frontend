@@ -1,4 +1,6 @@
-export class Anime {
+import { Season } from "./Season";
+
+export interface Anime {
     id?: number;
     title?: string;
     type?: string;
@@ -8,4 +10,5 @@ export class Anime {
     coverImage?: string;
     url?: string;
     urlTrailer?:string;
+    seasons?: Season[];
 }
