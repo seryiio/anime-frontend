@@ -20,7 +20,7 @@ export class AnimeComponent implements OnInit {
     description: '',
     image: '',
     coverImage: '',
-    urlTrailer:'',
+    urlTrailer: '',
     seasons: [
       {
         id: 0,
@@ -33,7 +33,7 @@ export class AnimeComponent implements OnInit {
     ]
   };
 
-  message= "No se encontro este anime";
+  message = "No se encontro este anime";
 
   constructor(
     private animeService: AnimeService, private animeRouter: ActivatedRoute
@@ -49,9 +49,8 @@ export class AnimeComponent implements OnInit {
   GetAnimeById(id: number): void {
     this.animeService.getAnimeById(id)
       .subscribe({
-        next: (data:any) => {
+        next: (data: any) => {
           this.animeById = data;
-          console.log(this.animeById.urlTrailer);
         },
         error: (e) => console.error(e)
       });

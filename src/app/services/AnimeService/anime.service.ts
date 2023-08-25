@@ -20,8 +20,7 @@ export class AnimeService {
     return this.http.get<Anime[]>(`${this.baseURL}/${id}`);
   }
 
-  getSeasonStatusForAllAnime(): Observable<Record<number, boolean[]>> {
-    const url = `${this.baseURL}/season-status`;
-    return this.http.get<Record<number, boolean[]>>(url);
+  getActiveAnimes(): Observable<Anime[]> {
+    return this.http.get<Anime[]>(`${this.baseURL}/active`);
   }
 }

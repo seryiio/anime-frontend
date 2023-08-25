@@ -12,6 +12,7 @@ import { AnimeComponent } from './components/anime/anime.component';
 import { HttpClientModule } from '@angular/common/http';
 
 import { register } from 'swiper/element/bundle';
+import { GenreAnimeComponent } from './genre-anime/genre-anime.component';
 
 register();
 
@@ -23,7 +24,8 @@ register();
     HomeComponent,
     ListComponent,
     LoginComponent,
-    AnimeComponent
+    AnimeComponent,
+    GenreAnimeComponent
   ],
   imports: [
     BrowserModule,

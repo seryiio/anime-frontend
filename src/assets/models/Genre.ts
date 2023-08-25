@@ -1,6 +1,4 @@
-export class Genre {
-    constructor(
-        public id: number,
-        public genreName: string
-    ) { }
+export interface Genre {
+    id: number;
+    genreName: string
 }

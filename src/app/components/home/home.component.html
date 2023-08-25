@@ -3,11 +3,11 @@
         <div class="container__anime-broadcast--anime-backgroundImage">
             <swiper-container class="anime-broadcast__swiper-container" effect="coverflow" slide-shadows="true"
                 centered-slides="true">
-                <swiper-slide class="anime-broadcast__swiper-container--slide" *ngFor="let anime of animes">
+                <swiper-slide class="anime-broadcast__swiper-container--slide" *ngFor="let animeActive of activeAnimes">
 
                     <div class="image">
-                        <a [routerLink]="['/animes', anime.id]">
-                            <img [src]="anime.coverImage" alt="">
+                        <a [routerLink]="['/animes', animeActive.id]">
+                            <img [src]="animeActive.coverImage" alt="">
                         </a>
                     </div>
 
@@ -15,8 +15,8 @@
             </swiper-container>
         </div>
         <div class="container__anime-broadcast--names">
-            <div *ngFor="let anime of animes" class="container__anime-broadcast--names-name">
-                <p>{{anime.title}}</p>
+            <div *ngFor="let animeActive of activeAnimes" class="container__anime-broadcast--names-name">
+                <p>{{animeActive.title}}</p>
             </div>
         </div>
     </div>
@@ -25,12 +25,11 @@
             <h1>Mi Lista</h1>
         </div>
 
-        <swiper-container class="cards" slides-per-view="5" space-between="20" navigation="true">
+        <swiper-container class="cards" slides-per-view="5" space-between="10" navigation="true">
             <swiper-slide class="cards__card" *ngFor="let anime of animes">
                 <div class="cards__card--first-container">
                     <div class="card__icons-status">
-                        <!--[ngClass]="getStatusIconClass(season.status)"-->
-                        <div>
+                        <div [ngClass]="getStatusIconClass(anime.status)">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="status-icon">
                                 <path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512z" />
                             </svg>
@@ -78,7 +77,9 @@
     <div class="container__genres">
         <swiper-container slides-per-view="5" free-mode="true" space-between="20" class="container__genres--carousel">
             <swiper-slide *ngFor="let genre of genres" class="genres--genre">
-                <p>{{genre.genreName}}</p>
+                <a [routerLink]="['/genre', genre.id]">
+                    <p>{{genre.genreName}}</p>
+                </a>
             </swiper-slide>
         </swiper-container>
     </div>
@@ -91,8 +92,7 @@
             <swiper-slide class="cards__card" *ngFor="let anime of animes">
                 <div class="cards__card--first-container">
                     <div class="card__icons-status">
-                        <!--[ngClass]="getStatusIconClass(season.status)"-->
-                        <div>
+                        <div [ngClass]="getStatusIconClass(anime.status)">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="status-icon">
                                 <path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512z" />
                             </svg>
@@ -146,8 +146,7 @@
             <swiper-slide class="cards__card" *ngFor="let anime of animes">
                 <div class="cards__card--first-container">
                     <div class="card__icons-status">
-                        <!--[ngClass]="getStatusIconClass(season.status)"-->
-                        <div>
+                        <div [ngClass]="getStatusIconClass(anime.status)">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="status-icon">
                                 <path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512z" />
                             </svg>
@@ -202,8 +201,7 @@
             <swiper-slide class="cards__card" *ngFor="let anime of animes">
                 <div class="cards__card--first-container">
                     <div class="card__icons-status">
-                        <!--[ngClass]="getStatusIconClass(season.status)"-->
-                        <div>
+                        <div [ngClass]="getStatusIconClass(anime.status)">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="status-icon">
                                 <path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512z" />
                             </svg>

@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AnimeService } from 'src/app/services/AnimeService/anime.service';
 import { GenreService } from 'src/app/services/GenreService/genre.service';
@@ -18,8 +18,7 @@ export class HomeComponent implements OnInit {
   animes: Anime[] = [];
   seasons: Season[] = [];
   genres: Genre[] = [];
-  activeSeasons: Season[] = [];
-  seasonStatusMap: Record<number, boolean[]> = {};
+  activeAnimes: Anime[] = [];
   constructor(
     private animeService: AnimeService, private animeRouter: Router,
     private genreService: GenreService, private genreRouter: Router,
@@ -28,7 +27,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
 
-    this.GetSeasonActive();
+    this.GetAnimeActive();
     this.GetAnimes();
     this.GetSeasons();
     this.GetGenrer();
@@ -55,27 +54,16 @@ export class HomeComponent implements OnInit {
     })
   }
 
-  private GetSeasonActive() {
-    this.seasonService.getActiveSeasons().subscribe(
-      activeSeasons => {
-        console.log(activeSeasons);
-        this.activeSeasons = activeSeasons;
+  private GetAnimeActive() {
+    this.animeService.getActiveAnimes().subscribe(
+      activeAnimes => {
+        console.log(this.activeAnimes);
+        this.activeAnimes = activeAnimes;
       }
     );
   }
 
-  private GetSeasonsActive(){
-    this.animeService.getSeasonStatusForAllAnime().subscribe(
-      (data) => {
-        this.seasonStatusMap = data;
-      },
-      (error) => {
-        console.error(error);
-      }
-    );
-  }
-
-  getStatusIconClass(status: boolean): string {
+  getStatusIconClass(status?: boolean): string {
     return status ? 'status-icon-green' : 'status-icon-red';
   }
 

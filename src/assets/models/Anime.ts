@@ -10,5 +10,6 @@ export interface Anime {
     coverImage?: string;
     url?: string;
     urlTrailer?:string;
+    status?: boolean;
     seasons?: Season[];
 }
