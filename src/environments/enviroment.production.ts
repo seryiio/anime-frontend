@@ -1,5 +1,5 @@
 export const environment = {
     production: true,
-    apiUrl: 'https://myanime-app-api.onrender.com/',
+    apiUrl: 'https://seryiio.github.io/anime-frontend/',
   };
   
