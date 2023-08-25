@@ -1,5 +1,5 @@
 export const environment = {
     production: true,
-    apiUrl: 'https://seryiio.github.io/anime-frontend/',
+    apiUrl: 'https://myanime-frontend.netlify.app//',
   };
   
