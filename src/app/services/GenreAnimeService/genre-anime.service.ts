@@ -8,7 +8,7 @@ import { Genre_Anime } from 'src/assets/models/GenreAnime';
 })
 export class GenreAnimeService {
 
-  private baseURL = 'http://localhost:8080/genre';
+  private baseURL = 'https://myanime-app-api.onrender.com/api/genre';
 
   constructor(private http: HttpClient) { }
 

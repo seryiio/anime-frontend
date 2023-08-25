@@ -61,9 +61,17 @@ p {
 
 @media (max-width: 767px) {
     .container {
-        .container__recomendation {
+        .container__anime-broadcast {
+            .container__anime-broadcast--names {
+                display: none;
+            }
+        }
+        .container__recomendation,
+        .container__myList,
+        .container__new-episodes {
             margin: 1.5em;
         }
+
     }
 }
 
@@ -81,6 +89,7 @@ p {
                 justify-content: center;
                 align-items: center;
                 cursor: pointer;
+
                 .image {
                     display: flex;
                     justify-content: center;
@@ -88,7 +97,6 @@ p {
                     width: 100%;
                     max-width: 600px;
                     height: 20em;
-                    background-color: rgb(255, 255, 255);
                     margin: 0 auto;
                     overflow: hidden;
 
@@ -158,11 +166,18 @@ p {
 
 }
 
-.container__recomendation {
+.container__recomendation,
+.container__myList,
+.container__new-episodes,
+.container__future-animes {
     margin: 2.5em 6em 2.5em 6em;
 }
 
-.container__recomendation--title {
+
+.container__recomendation--title,
+.container__myList--title,
+.container__new-episodes--title,
+.container__future-animes--title {
     border-bottom-width: 4px;
     margin-bottom: 2rem;
     border-radius: 0.25rem;

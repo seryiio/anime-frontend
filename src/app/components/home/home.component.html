@@ -2,7 +2,7 @@
     <div class="container__anime-broadcast">
         <div class="container__anime-broadcast--anime-backgroundImage">
             <swiper-container class="anime-broadcast__swiper-container" effect="coverflow" slide-shadows="true"
-                centered-slides="true">
+                centered-slides="true" pagination="true">
                 <swiper-slide class="anime-broadcast__swiper-container--slide" *ngFor="let animeActive of activeAnimes">
 
                     <div class="image">
@@ -20,12 +20,11 @@
             </div>
         </div>
     </div>
-    <div class="container__my-list mx-24 my-10">
-        <div class="container__myList--title border-b-4 mb-8 rounded">
+    <div class="container__myList">
+        <div class="container__myList--title">
             <h1>Mi Lista</h1>
         </div>
-
-        <swiper-container class="cards" slides-per-view="5" space-between="10" navigation="true">
+        <swiper-container class="cards" slides-per-view="auto" space-between="10" navigation="true">
             <swiper-slide class="cards__card" *ngFor="let anime of animes">
                 <div class="cards__card--first-container">
                     <div class="card__icons-status">
@@ -75,7 +74,7 @@
         </swiper-container>
     </div>
     <div class="container__genres">
-        <swiper-container slides-per-view="5" free-mode="true" space-between="20" class="container__genres--carousel">
+        <swiper-container slides-per-view="4" free-mode="true" space-between="20" class="container__genres--carousel">
             <swiper-slide *ngFor="let genre of genres" class="genres--genre">
                 <a [routerLink]="['/genre', genre.id]">
                     <p>{{genre.genreName}}</p>
@@ -88,7 +87,7 @@
             <h1>Recomendaciones</h1>
         </div>
 
-        <swiper-container class="cards" slides-per-view="5" space-between="20" navigation="true">
+        <swiper-container class="cards" slides-per-view="auto" space-between="20" navigation="true">
             <swiper-slide class="cards__card" *ngFor="let anime of animes">
                 <div class="cards__card--first-container">
                     <div class="card__icons-status">
@@ -137,13 +136,13 @@
             </swiper-slide>
         </swiper-container>
     </div>
-    <div class="container__new-episodes mx-24 my-10">
-        <div class="container__new-episodes--title border-b-4 mb-8 rounded">
+    <div class="container__new-episodes">
+        <div class="container__new-episodes--title">
             <h1>Nuevos Episodios</h1>
         </div>
 
-        <swiper-container class="cards" slides-per-view="5" space-between="20" navigation="true">
-            <swiper-slide class="cards__card" *ngFor="let anime of animes">
+        <swiper-container class="cards" slides-per-view="auto" space-between="20" navigation="true">
+            <swiper-slide class="cards__card" *ngFor="let anime of activeAnimes">
                 <div class="cards__card--first-container">
                     <div class="card__icons-status">
                         <div [ngClass]="getStatusIconClass(anime.status)">
@@ -192,8 +191,8 @@
         </swiper-container>
 
     </div>
-    <div class="container__future-animes mx-24 my-10">
-        <div class="container__future-animes--title border-b-4 mb-8 rounded">
+    <div class="container__future-animes">
+        <div class="container__future-animes--title">
             <h1>Animes estreno de la próxima temporada</h1>
         </div>
 

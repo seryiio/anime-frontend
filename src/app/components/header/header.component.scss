@@ -52,6 +52,7 @@ header {
         }
     }
 }
+
 .header.scrolled {
     background-color: #181818;
 }
@@ -179,19 +180,16 @@ svg {
 
 
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
     .header {
-        .left{
+        .left {
             width: 100%;
-            flex-direction: row-reverse;
         }
+
         .right {
             display: none;
         }
     }
 
-    .sidebar__content{
-        top: 0;
-        right: 0;
-    }
+
 }

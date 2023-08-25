@@ -7,7 +7,7 @@ import { Season } from 'src/assets/models/Season';
   providedIn: 'root'
 })
 export class SeasonService {
-  private baseURL = 'http://localhost:8080/seasons';
+  private baseURL = 'https://myanime-app-api.onrender.com/seasons';
 
   constructor(private http: HttpClient) { }
 

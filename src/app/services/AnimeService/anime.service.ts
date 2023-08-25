@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class AnimeService {
 
-  private baseURL = 'http://localhost:8080/animes';
+  private baseURL = 'https://myanime-app-api.onrender.com/api/animes';
 
   constructor(private http: HttpClient) { }
 
