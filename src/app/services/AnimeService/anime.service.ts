@@ -2,13 +2,14 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Anime } from 'src/assets/models/Anime';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/enviroment.production';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AnimeService {
 
-  private baseURL = 'https://myanime-app-api.onrender.com/api/animes';
+  private baseURL = environment.apiUrl + "api/animes";
 
   constructor(private http: HttpClient) { }
 
