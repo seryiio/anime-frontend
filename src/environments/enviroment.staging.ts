@@ -1,4 +1,4 @@
 export const environment = {
     production: false,
-    urlApi: 'http://localhost:8080/',
+    urlApi: 'https://myanime-app-api.onrender.com/api/v1/',
 };
