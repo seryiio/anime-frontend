@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Genre_Anime } from 'src/assets/models/GenreAnime';
-import { GenreAnimeService } from '../services/GenreAnimeService/genre-anime.service';
+import { GenreAnimeService } from '../../services/GenreAnimeService/genre-anime.service';
 import { ActivatedRoute } from '@angular/router';
 import { Genre } from 'src/assets/models/Genre';
 

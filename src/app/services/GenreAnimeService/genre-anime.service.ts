@@ -9,11 +9,15 @@ import { environment } from 'src/environments/enviroment.production';
 })
 export class GenreAnimeService {
 
-  private baseURL = environment.apiUrl + "api/genre";
+  private baseURL = environment.apiUrl + "genre";
 
   constructor(private http: HttpClient) { }
 
   getAnimesByGenre(genreId: number): Observable<Genre_Anime[]> {
     return this.http.get<Genre_Anime[]>(`${this.baseURL}/${genreId}`);
+  }
+  
+  getGenresByAnimeId(id: number): Observable<Genre_Anime[]> {
+    return this.http.get<Genre_Anime[]>(`${this.baseURL}/${id}/genresByAnime`);
   }
 }

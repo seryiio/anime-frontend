@@ -6,35 +6,43 @@
         </div>
     </div>
     <div class="container__second-container">
-        <div class="container__second-container--cartelAnime">
-            <div class="second-container--carterAnime__image">
-                <img [src]="animeById.image" alt="">
-            </div>
-            <div class="second-container--carterAnime__name">
-                <h4>{{animeById.title}}</h4>
-                <a href="">
-                    <svg xmlns="http://www.w3.org/2000/svg" height="1.5em" viewBox="0 0 512 512">
-                        <path
-                            d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM232 344V280H168c-13.3 0-24-10.7-24-24s10.7-24 24-24h64V168c0-13.3 10.7-24 24-24s24 10.7 24 24v64h64c13.3 0 24 10.7 24 24s-10.7 24-24 24H280v64c0 13.3-10.7 24-24 24s-24-10.7-24-24z" />
-                    </svg>
-                </a>
+        <div class="container__second-container--row">
+            <div class="second-container__row--name">
+                <h1>{{animeById.title}}</h1>
             </div>
         </div>
-        <div class="container__second-container--descriptionAnime">
-            <div *ngFor="let season of animeById.seasons" class="second-container__descriptionAnime--episodes">
-                <h4>Temporadas</h4>
-                <p>{{season.number}}</p>
+        <div class="container__second-container--columns">
+            <div class="second-container__columns--cartelAnime">
+                <div class="columns__cartelAnime--image">
+                    <img [src]="animeById.image" alt="">
+                </div>
+                <div class="columns__cartelAnime--genres">
+                    <a *ngFor="let genres of GenresbyAnime" href="">{{genres.genre.genreName}}</a>
+                    <!--
+                    <a href="">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="1.5em" viewBox="0 0 512 512">
+                            <path
+                                d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM232 344V280H168c-13.3 0-24-10.7-24-24s10.7-24 24-24h64V168c0-13.3 10.7-24 24-24s24 10.7 24 24v64h64c13.3 0 24 10.7 24 24s-10.7 24-24 24H280v64c0 13.3-10.7 24-24 24s-24-10.7-24-24z" />
+                        </svg>
+                    </a>-->
+                </div>
             </div>
-            <div class="second-container__descriptionAnime--episodes">
-                <h4>Ranking</h4>
-                <p>5</p>
+            <div class="second-container__columns--descriptionAnime">
+                <div *ngFor="let season of animeById.seasons" class="columns__descriptionAnime--episodes">
+                    <h4>Temporadas</h4>
+                    <p>{{season.number}}</p>
+                </div>
+                <div class="columns__descriptionAnime--episodes">
+                    <h4>Ranking</h4>
+                    <p>5</p>
+                </div>
             </div>
-        </div>
-        <div class="container__second-container--trailer">
-            <div class="container--trailer__video">
-                <iframe src="https://youtube.com/embed/iGNzu632l_Q" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen></iframe>
+            <div class="second-container__columns--trailer">
+                <div class="columns__trailer--video">
+                    <iframe src="https://youtube.com/embed/iGNzu632l_Q" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen></iframe>
+                </div>
             </div>
         </div>
     </div>

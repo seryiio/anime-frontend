@@ -1,3 +1,4 @@
+import { Genre_Anime } from "./GenreAnime";
 import { Season } from "./Season";
 
 export interface Anime {

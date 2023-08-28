@@ -3,13 +3,14 @@ import { HttpClient } from '@angular/common/http';
 import { Anime } from 'src/assets/models/Anime';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/enviroment.production';
+import { Genre_Anime } from 'src/assets/models/GenreAnime';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AnimeService {
 
-  private baseURL = environment.apiUrl + "api/animes";
+  private baseURL = environment.apiUrl + "animes";
 
   constructor(private http: HttpClient) { }
 
@@ -23,5 +24,9 @@ export class AnimeService {
 
   getActiveAnimes(): Observable<Anime[]> {
     return this.http.get<Anime[]>(`${this.baseURL}/active`);
+  }
+  
+  getSeasonByAnimeId(id: number): Observable<Anime[]> {
+    return this.http.get<Anime[]>(`${this.baseURL}/${id}/seasons`);
   }
 }

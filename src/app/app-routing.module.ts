@@ -4,7 +4,7 @@ import { HomeComponent } from './components/home/home.component';
 import { ListComponent } from './components/list/list.component';
 import { LoginComponent } from './components/login/login.component';
 import { AnimeComponent } from './components/anime/anime.component';
-import { GenreAnimeComponent } from './genre-anime/genre-anime.component';
+import { GenreAnimeComponent } from './components/genre-anime/genre-anime.component';
 
 const routes: Routes = [
   {

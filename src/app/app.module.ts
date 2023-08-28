@@ -12,7 +12,7 @@ import { AnimeComponent } from './components/anime/anime.component';
 import { HttpClientModule } from '@angular/common/http';
 
 import { register } from 'swiper/element/bundle';
-import { GenreAnimeComponent } from './genre-anime/genre-anime.component';
+import { GenreAnimeComponent } from './components/genre-anime/genre-anime.component';
 
 register();
 
