@@ -74,7 +74,7 @@
         </swiper-container>
     </div>
     <div class="container__genres">
-        <swiper-container slides-per-view="4" free-mode="true" space-between="20" class="container__genres--carousel">
+        <swiper-container slides-per-view="auto" free-mode="true" space-between="20" class="container__genres--carousel">
             <swiper-slide *ngFor="let genre of genres" class="genres--genre">
                 <a [routerLink]="['/genre', genre.id]">
                     <p>{{genre.genreName}}</p>

@@ -17,7 +17,8 @@
                     <img [src]="animeById.image" alt="">
                 </div>
                 <div class="columns__cartelAnime--genres">
-                    <a *ngFor="let genres of GenresbyAnime" href="">{{genres.genre.genreName}}</a>
+                    <a [routerLink]="['/genre', animeById]"
+                        *ngFor="let genres of GenresbyAnime">{{genres.genre.genreName}}</a>
                     <!--
                     <a href="">
                         <svg xmlns="http://www.w3.org/2000/svg" height="1.5em" viewBox="0 0 512 512">
@@ -39,7 +40,7 @@
             </div>
             <div class="second-container__columns--trailer">
                 <div class="columns__trailer--video">
-                    <iframe src="https://youtube.com/embed/iGNzu632l_Q" frameborder="0"
+                    <iframe [src]="trustedUrl" frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         allowfullscreen></iframe>
                 </div>
@@ -56,9 +57,6 @@
                     <a href="">Temporadas</a>
                 </li>
                 <li>
-                    <a href="">Actores de voz</a>
-                </li>
-                <li>
                     <a href="">Noticias</a>
                 </li>
                 <li>
@@ -70,10 +68,32 @@
             <p>{{animeById.description}}</p>
         </div>
         <div class="container__thrid-container--actors">
-            <div class="cards">
-                <div class="card">
-                    <h3>container__recomendation</h3>
-                </div>
+            <h3>Actores de Voz</h3>
+            <swiper-container class="cards" slides-per-view="5" space-between="20" navigation="true">
+                <swiper-slide class="cards__card">
+                    <div class="cards__card--first-container">
+                        <div class="card__image">
+                            <a [routerLink]="['/animes', animeById.id]">
+                                <img [src]="animeById.image" alt="">
+                            </a>
+                        </div>
+                        <div class="card__names">
+                            <div class="card__names-name">
+                                <p>{{animeById.title}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </swiper-slide>
+            </swiper-container>
+        </div>
+    </div>
+    <div class="container__fourth-container">
+        <div class="fourth-container__season">
+            <h1>Temporada 1</h1>
+            <div class="fourth-container__season--episode">
+                <h2>Episodio 1</h2>
+                <h2>Episodio 2</h2>
+                <h2>Episodio 4</h2>
             </div>
         </div>
     </div>

@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AnimeService } from 'src/app/services/AnimeService/anime.service';
 import { GenreAnimeService } from 'src/app/services/GenreAnimeService/genre-anime.service';
@@ -15,11 +16,14 @@ import { Season } from 'src/assets/models/Season';
 export class AnimeComponent implements OnInit {
 
   id: any;
+  dangerousUrl: any;
+  trustedUrl: any;
   animes?: Anime[];
   GenresbyAnime?: Genre_Anime[];
   seasons?: Season[];
 
   @Input() viewMode = false;
+
 
   @Input() animeById: Anime = {
     title: '',
@@ -43,7 +47,8 @@ export class AnimeComponent implements OnInit {
 
   constructor(
     private animeService: AnimeService, private animeRouter: ActivatedRoute,
-    private genreAnimeService: GenreAnimeService
+    private genreAnimeService: GenreAnimeService,
+    private sanitizer: DomSanitizer
   ) { }
 
   ngOnInit(): void {
@@ -59,6 +64,9 @@ export class AnimeComponent implements OnInit {
       .subscribe({
         next: (data: any) => {
           this.animeById = data;
+          this.dangerousUrl = this.animeById.urlTrailer;
+          this.trustedUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.dangerousUrl);
+          console.log(this.animeById.urlTrailer);
         },
         error: (e) => console.error(e)
       });

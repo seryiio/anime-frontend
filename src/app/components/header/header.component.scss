@@ -38,6 +38,9 @@ header {
                 a{
                     color: white;
                 }
+                a:hover{
+                    color:#4D80E4;
+                }
             }
         }
     }
@@ -224,6 +227,9 @@ svg {
     .header {
         .header__left {
             width: 80%;
+            .header__left--logo{
+                width: 50%;
+            }
             .header__left--navegation{
                 display: none;
             }
